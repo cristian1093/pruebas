@@ -51,10 +51,10 @@
                                 </div>
                             </div>
 
-                            <div class="col-12 mb-2" v-if="movie.image && !imagePreview">
+                            <div class="col-12 mb-2" v-if="!imagePreview && movie.image">
                                 <div class="form-group">
                                     <p>Imagen actual:</p>
-                                    <img :src="movie.image" class="img-thumbnail mt-2" style="max-width: 200px; max-height: 200px;" alt="Imagen actual">
+                                    <img :src="getImageUrl(movie.image)" class="img-thumbnail mt-2" style="max-width: 200px; max-height: 200px;" alt="Imagen actual">
                                 </div>
                             </div>
 
@@ -68,6 +68,7 @@
         </div>
     </div>
 </template>
+
 <script>
 import axios from 'axios';
 
@@ -99,6 +100,8 @@ export default {
                 this.movie.publication_date = movieData.publication_date;
                 this.movie.state = movieData.state;
                 this.movie.image = movieData.image;
+                // Set the current image URL to the preview if no new image is selected
+                this.imagePreview = this.movie.image ? this.getImageUrl(this.movie.image) : null;
             })
             .catch(error => {
                 console.error('Error al obtener los datos de la película:', error);
@@ -133,6 +136,10 @@ export default {
             const file = event.target.files[0];
             this.movie.image = file;
             this.imagePreview = URL.createObjectURL(file);
+        },
+        getImageUrl(image) {
+            // Adjust the base URL according to your setup
+            return `/storage/${image}`;
         }
     },
     beforeDestroy() {

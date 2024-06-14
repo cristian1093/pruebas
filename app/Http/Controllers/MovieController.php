@@ -123,4 +123,10 @@ class MovieController extends Controller
             'data' => $result
         ]);
     }
+
+    public function getMovieSchedules ($id){
+        $result = $this->movieService->getMovieSchedules($id);
+
+        return response()->json(['movie_schedules' => $result], 201);
+    }
 }

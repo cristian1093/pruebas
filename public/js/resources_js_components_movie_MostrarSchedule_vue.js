@@ -1,10 +1,10 @@
 "use strict";
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_components_movie_Mostrar_vue"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_components_movie_MostrarSchedule_vue"],{
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/movie/Mostrar.vue?vue&type=script&lang=js":
-/*!*******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/movie/Mostrar.vue?vue&type=script&lang=js ***!
-  \*******************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/movie/MostrarSchedule.vue?vue&type=script&lang=js":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/movie/MostrarSchedule.vue?vue&type=script&lang=js ***!
+  \***************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -16,16 +16,15 @@ function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyri
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
 function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "Movies",
+  name: "MovieSchedules",
   data: function data() {
     return {
-      movies: []
+      movie_schedules: []
     };
   },
   computed: {
-    sortedMovies: function sortedMovies() {
-      // Ordenar películas por ID ascendente
-      return this.movies.sort(function (a, b) {
+    sortedMovieSchedules: function sortedMovieSchedules() {
+      return this.movie_schedules.sort(function (a, b) {
         return a.id - b.id;
       });
     }
@@ -49,28 +48,29 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
     mostrarMovies: function mostrarMovies() {
       var _this2 = this;
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
-        var response;
+        var movieId, response;
         return _regeneratorRuntime().wrap(function _callee2$(_context2) {
           while (1) switch (_context2.prev = _context2.next) {
             case 0:
-              _context2.prev = 0;
-              _context2.next = 3;
-              return _this2.axios.get('/api/movie/');
-            case 3:
+              movieId = _this2.$route.params.id;
+              _context2.prev = 1;
+              _context2.next = 4;
+              return _this2.axios.get("/api/movie/get-schedules/".concat(movieId));
+            case 4:
               response = _context2.sent;
-              _this2.movies = response.data;
-              _context2.next = 11;
+              _this2.movie_schedules = [response.data.movie_schedules];
+              _context2.next = 12;
               break;
-            case 7:
-              _context2.prev = 7;
-              _context2.t0 = _context2["catch"](0);
-              console.error('Error fetching movies:', _context2.t0);
-              _this2.movies = [];
-            case 11:
+            case 8:
+              _context2.prev = 8;
+              _context2.t0 = _context2["catch"](1);
+              console.error('Error fetching movie schedules:', _context2.t0);
+              _this2.movie_schedules = [];
+            case 12:
             case "end":
               return _context2.stop();
           }
-        }, _callee2, null, [[0, 7]]);
+        }, _callee2, null, [[1, 8]]);
       }))();
     },
     borrarMovie: function borrarMovie(id) {
@@ -95,7 +95,7 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
             case 8:
               _context3.prev = 8;
               _context3.t0 = _context3["catch"](1);
-              console.error('Error deleting movie:', _context3.t0);
+              console.error('Error deleting movie schedule:', _context3.t0);
             case 11:
             case "end":
               return _context3.stop();
@@ -108,10 +108,10 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/movie/Mostrar.vue?vue&type=template&id=5ac52106":
-/*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/movie/Mostrar.vue?vue&type=template&id=5ac52106 ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/movie/MostrarSchedule.vue?vue&type=template&id=38c7963d":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/movie/MostrarSchedule.vue?vue&type=template&id=38c7963d ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -125,88 +125,69 @@ var render = function render() {
   return _c("div", {
     staticClass: "row"
   }, [_c("div", {
-    staticClass: "col-12 mb-2"
-  }, [_c("router-link", {
-    staticClass: "btn btn-success",
-    attrs: {
-      to: {
-        name: "crearMovie"
-      }
-    }
-  }, [_c("i", {
-    staticClass: "fas fa-plus-circle"
-  }), _vm._v(" Crear")])], 1), _vm._v(" "), _c("div", {
     staticClass: "col-12"
   }, [_c("div", {
     staticClass: "table-responsive"
   }, [_c("table", {
     staticClass: "table table-bordered"
-  }, [_vm._m(0), _vm._v(" "), _c("tbody", _vm._l(_vm.sortedMovies, function (movie) {
-    return _c("tr", {
-      key: movie.id
-    }, [_c("td", [_vm._v(_vm._s(movie.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(movie.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(movie.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(movie.director))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(movie.publication_date))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(movie.state))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(movie.image))]), _vm._v(" "), _c("td", [_c("router-link", {
-      staticClass: "btn btn-info",
-      attrs: {
-        to: {
-          name: "editarMovie",
-          params: {
-            id: movie.id
+  }, [_vm._m(0), _vm._v(" "), _vm._l(_vm.sortedMovieSchedules, function (movie_schedule) {
+    return _c("tbody", {
+      key: movie_schedule.id
+    }, _vm._l(movie_schedule.schedules, function (schedule) {
+      return _c("tr", {
+        key: schedule.id
+      }, [_c("td", [_vm._v(_vm._s(schedule.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(schedule.time))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(schedule.state ? "Activo" : "Inactivo"))]), _vm._v(" "), _c("td", [_c("router-link", {
+        staticClass: "btn btn-info",
+        attrs: {
+          to: {
+            name: "editarMovieSchedule",
+            params: {
+              id: schedule.id
+            }
           }
         }
-      }
-    }, [_c("i", {
-      staticClass: "fas fa-edit"
-    }), _vm._v(" Editar")]), _vm._v(" "), _c("router-link", {
-      staticClass: "btn btn-warning",
-      attrs: {
-        to: {
-          name: "editarMovieSchedule",
-          params: {
-            id: movie.id
+      }, [_c("i", {
+        staticClass: "fas fa-edit"
+      }), _vm._v(" Editar Horario\n                            ")]), _vm._v(" "), _c("button", {
+        staticClass: "btn btn-danger",
+        attrs: {
+          type: "button"
+        },
+        on: {
+          click: function click($event) {
+            return _vm.borrarMovie(schedule.id);
           }
         }
-      }
-    }, [_c("i", {
-      staticClass: "fas fa-align-justify"
-    })]), _vm._v(" "), _c("button", {
-      staticClass: "btn btn-danger",
-      attrs: {
-        type: "button"
-      },
-      on: {
-        click: function click($event) {
-          return _vm.borrarMovie(movie.id);
-        }
-      }
-    }, [_c("i", {
-      staticClass: "fas fa-trash"
-    }), _vm._v(" Borrar")])], 1)]);
-  }), 0)])])])]);
+      }, [_c("i", {
+        staticClass: "fas fa-trash"
+      }), _vm._v(" Borrar\n                            ")])], 1)]);
+    }), 0);
+  })], 2)])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("thead", {
     staticClass: "bg-primary text-white"
-  }, [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Nombre")]), _vm._v(" "), _c("th", [_vm._v("Descripción")]), _vm._v(" "), _c("th", [_vm._v("Director")]), _vm._v(" "), _c("th", [_vm._v("Fecha de Publicación")]), _vm._v(" "), _c("th", [_vm._v("Estado")]), _vm._v(" "), _c("th", [_vm._v("Imagen")]), _vm._v(" "), _c("th", [_vm._v("Acciones")])])]);
+  }, [_c("tr", [_c("th", [_vm._v("ID")]), _vm._v(" "), _c("th", [_vm._v("Time")]), _vm._v(" "), _c("th", [_vm._v("State")]), _vm._v(" "), _c("th", [_vm._v("Acciones")])])]);
 }];
 render._withStripped = true;
 
 
 /***/ }),
 
-/***/ "./resources/js/components/movie/Mostrar.vue":
-/*!***************************************************!*\
-  !*** ./resources/js/components/movie/Mostrar.vue ***!
-  \***************************************************/
+/***/ "./resources/js/components/movie/MostrarSchedule.vue":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/movie/MostrarSchedule.vue ***!
+  \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Mostrar_vue_vue_type_template_id_5ac52106__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Mostrar.vue?vue&type=template&id=5ac52106 */ "./resources/js/components/movie/Mostrar.vue?vue&type=template&id=5ac52106");
-/* harmony import */ var _Mostrar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Mostrar.vue?vue&type=script&lang=js */ "./resources/js/components/movie/Mostrar.vue?vue&type=script&lang=js");
+/* harmony import */ var _MostrarSchedule_vue_vue_type_template_id_38c7963d__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MostrarSchedule.vue?vue&type=template&id=38c7963d */ "./resources/js/components/movie/MostrarSchedule.vue?vue&type=template&id=38c7963d");
+/* harmony import */ var _MostrarSchedule_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MostrarSchedule.vue?vue&type=script&lang=js */ "./resources/js/components/movie/MostrarSchedule.vue?vue&type=script&lang=js");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -216,9 +197,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 ;
 var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Mostrar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Mostrar_vue_vue_type_template_id_5ac52106__WEBPACK_IMPORTED_MODULE_0__.render,
-  _Mostrar_vue_vue_type_template_id_5ac52106__WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  _MostrarSchedule_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"],
+  _MostrarSchedule_vue_vue_type_template_id_38c7963d__WEBPACK_IMPORTED_MODULE_0__.render,
+  _MostrarSchedule_vue_vue_type_template_id_38c7963d__WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
   null,
   null,
@@ -228,38 +209,38 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/movie/Mostrar.vue"
+component.options.__file = "resources/js/components/movie/MostrarSchedule.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/movie/Mostrar.vue?vue&type=script&lang=js":
-/*!***************************************************************************!*\
-  !*** ./resources/js/components/movie/Mostrar.vue?vue&type=script&lang=js ***!
-  \***************************************************************************/
+/***/ "./resources/js/components/movie/MostrarSchedule.vue?vue&type=script&lang=js":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/movie/MostrarSchedule.vue?vue&type=script&lang=js ***!
+  \***********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Mostrar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Mostrar.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/movie/Mostrar.vue?vue&type=script&lang=js");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Mostrar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_MostrarSchedule_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./MostrarSchedule.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/movie/MostrarSchedule.vue?vue&type=script&lang=js");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_MostrarSchedule_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/movie/Mostrar.vue?vue&type=template&id=5ac52106":
-/*!*********************************************************************************!*\
-  !*** ./resources/js/components/movie/Mostrar.vue?vue&type=template&id=5ac52106 ***!
-  \*********************************************************************************/
+/***/ "./resources/js/components/movie/MostrarSchedule.vue?vue&type=template&id=38c7963d":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/components/movie/MostrarSchedule.vue?vue&type=template&id=38c7963d ***!
+  \*****************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Mostrar_vue_vue_type_template_id_5ac52106__WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   staticRenderFns: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Mostrar_vue_vue_type_template_id_5ac52106__WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_MostrarSchedule_vue_vue_type_template_id_38c7963d__WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   staticRenderFns: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_MostrarSchedule_vue_vue_type_template_id_38c7963d__WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Mostrar_vue_vue_type_template_id_5ac52106__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Mostrar.vue?vue&type=template&id=5ac52106 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/movie/Mostrar.vue?vue&type=template&id=5ac52106");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_MostrarSchedule_vue_vue_type_template_id_38c7963d__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./MostrarSchedule.vue?vue&type=template&id=38c7963d */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/movie/MostrarSchedule.vue?vue&type=template&id=38c7963d");
 
 
 /***/ })

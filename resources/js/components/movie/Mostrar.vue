@@ -29,6 +29,7 @@
                             <td>{{ movie.image }}</td>
                             <td>
                                 <router-link :to="{ name: 'editarMovie', params: { id: movie.id } }" class="btn btn-info"><i class="fas fa-edit"></i> Editar</router-link>
+                                <router-link :to="{ name: 'editarMovieSchedule', params: { id: movie.id } }" class="btn btn-warning"><i class="fas fa-align-justify"></i> </router-link>
                                 <button type="button" @click="borrarMovie(movie.id)" class="btn btn-danger"><i class="fas fa-trash"></i> Borrar</button>
                             </td>
                         </tr>

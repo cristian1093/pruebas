@@ -54,4 +54,9 @@ class MovieRepository implements MovieRepositoryInterface
     {
         Movie::destroy($id);
     }
+
+    public function getSchedules($id)
+    {
+        return Movie::with('schedules')->find($id);
+    }
 }

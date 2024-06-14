@@ -39,4 +39,10 @@ class MovieService
     {
         return $this->movieRepository->delete($id);
     }
+
+    public function getMovieSchedules($id)
+    {
+        return $this->movieRepository->getSchedules($id);
+    }
+
 }

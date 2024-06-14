@@ -46,6 +46,8 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
       _this.movie.publication_date = movieData.publication_date;
       _this.movie.state = movieData.state;
       _this.movie.image = movieData.image;
+      // Set the current image URL to the preview if no new image is selected
+      _this.imagePreview = _this.movie.image ? _this.getImageUrl(_this.movie.image) : null;
     })["catch"](function (error) {
       console.error('Error al obtener los datos de la película:', error);
     });
@@ -98,6 +100,10 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
       var file = event.target.files[0];
       this.movie.image = file;
       this.imagePreview = URL.createObjectURL(file);
+    },
+    getImageUrl: function getImageUrl(image) {
+      // Adjust the base URL according to your setup
+      return "/storage/".concat(image);
     }
   },
   beforeDestroy: function beforeDestroy() {
@@ -313,7 +319,7 @@ var render = function render() {
       src: _vm.imagePreview,
       alt: "Vista previa de la imagen"
     }
-  }) : _vm._e()])]), _vm._v(" "), _vm.movie.image && !_vm.imagePreview ? _c("div", {
+  }) : _vm._e()])]), _vm._v(" "), !_vm.imagePreview && _vm.movie.image ? _c("div", {
     staticClass: "col-12 mb-2"
   }, [_c("div", {
     staticClass: "form-group"
@@ -324,7 +330,7 @@ var render = function render() {
       "max-height": "200px"
     },
     attrs: {
-      src: _vm.movie.image,
+      src: _vm.getImageUrl(_vm.movie.image),
       alt: "Imagen actual"
     }
   })])]) : _vm._e(), _vm._v(" "), _vm._m(1)])])])])])]);

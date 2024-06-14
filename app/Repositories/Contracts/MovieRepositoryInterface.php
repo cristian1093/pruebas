@@ -11,4 +11,5 @@ interface MovieRepositoryInterface
     public function create(MovieData $data);
     public function update(MovieData $data);
     public function delete($id);
+    public function getSchedules($id);
 }

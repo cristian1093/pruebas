@@ -18,6 +18,7 @@ Route::prefix('movie')->group(function () {
     Route::put('/update/{id}', [App\Http\Controllers\MovieController::class, 'updateMovie']);
     Route::get('/show/{id}', [App\Http\Controllers\MovieController::class, 'showMovie']);
     Route::delete('/delete/{id}', [App\Http\Controllers\MovieController::class, 'destroyMovie']);
+    Route::get('/get-schedules/{id}', [App\Http\Controllers\MovieController::class, 'getMovieSchedules']);
 });
 
 Route::prefix('schedule')->group(function () {

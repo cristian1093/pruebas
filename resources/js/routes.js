@@ -11,6 +11,8 @@ const mostrarSchedule = () => import('./components/schedule/Mostrar.vue')
 const crearSchedule = () => import('./components/schedule/Crear.vue')
 const EditarSchedule = () => import('./components/schedule/Editar.vue')
 
+const MostrarSchedule = () => import('./components/movie/MostrarSchedule.vue');
+
 export const routes = [
     {
         name: 'home',
@@ -67,4 +69,10 @@ export const routes = [
         path: '/schedules/editar/:id',
         component: EditarSchedule
     },
+    {
+        name: 'editarMovieSchedule',
+        path: '/movies/schedule/:id',
+        component: MostrarSchedule
+    },
+
 ]
